@@ -57,8 +57,15 @@ public class MainMenu {
         buttonPanel.setBackground(Color.BLACK);
 
         // Boutons
-        JButton playButton = new JButton(new ImageIcon("Media/images/info.png"));
+        ImageIcon icon = new ImageIcon("Media/images/play2.png");
+
+// Redimensionner l'image à 50x50 pixels par exemple
+Image image = icon.getImage().getScaledInstance(70, 70, Image.SCALE_SMOOTH);
+ImageIcon resizedIcon = new ImageIcon(image);
+
+JButton playButton = new JButton(resizedIcon);
         JButton infoButton = new JButton(new ImageIcon("Media/images/info.png"));
+        
 
         for (JButton btn : new JButton[]{playButton, infoButton}) {
             btn.setPreferredSize(new Dimension(70, 60));
